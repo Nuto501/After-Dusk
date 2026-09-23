@@ -11,64 +11,92 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
 
-[node name="Backdrop" type="ColorRect" parent="."]
+[node name="Night" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.035, 0.047, 0.075, 1)
+color = Color(0.025, 0.03, 0.055, 1)
 
-[node name="Title" type="Label" parent="."]
-offset_left = 55.0
-offset_top = 65.0
-offset_right = 700.0
-offset_bottom = 125.0
-theme_override_font_sizes/font_size = 42
+[node name="Glow" type="ColorRect" parent="."]
+offset_right = 1080.0
+offset_bottom = 18.0
+color = Color(0.85, 0.16, 0.55, 1)
+
+[node name="GameTitle" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 600.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 38
 text = "AFTER DUSK"
 
-[node name="Stats" type="HBoxContainer" parent="."]
-offset_left = 55.0
-offset_top = 135.0
-offset_right = 1025.0
-offset_bottom = 190.0
+[node name="SceneLabel" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 108.0
+offset_right = 900.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 20
+text = "LONDON • 23:47 • THE VELVET ROOM"
 
-[node name="Affection" type="Label" parent="Stats"]
+[node name="PortraitPanel" type="PanelContainer" parent="."]
+offset_left = 48.0
+offset_top = 185.0
+offset_right = 1032.0
+offset_bottom = 1085.0
+
+[node name="Portrait" type="TextureRect" parent="PortraitPanel"]
 unique_name_in_owner = true
-text = "Affection  0"
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Trust" type="Label" parent="Stats"]
+[node name="PortraitFallback" type="Label" parent="PortraitPanel"]
 unique_name_in_owner = true
-text = "Trust  0"
-
-[node name="Portrait" type="Label" parent="."]
-offset_left = 55.0
-offset_top = 250.0
-offset_right = 1025.0
-offset_bottom = 1000.0
-theme_override_font_sizes/font_size = 34
-text = "SOFIA\n\nPortrait slot\nart/portraits/sofia/"
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "SOFIA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="PanelContainer" parent="."]
-offset_left = 55.0
-offset_top = 1050.0
-offset_right = 1025.0
-offset_bottom = 1830.0
+[node name="DialoguePanel" type="PanelContainer" parent="."]
+offset_left = 48.0
+offset_top = 1115.0
+offset_right = 1032.0
+offset_bottom = 1860.0
 
-[node name="Content" type="VBoxContainer" parent="Panel"]
+[node name="Margin" type="MarginContainer" parent="DialoguePanel"]
 layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 30
 
-[node name="Speaker" type="Label" parent="Panel/Content"]
+[node name="Content" type="VBoxContainer" parent="DialoguePanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Speaker" type="Label" parent="DialoguePanel/Margin/Content"]
 unique_name_in_owner = true
-theme_override_font_sizes/font_size = 34
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Sofia"
 
-[node name="Dialogue" type="Label" parent="Panel/Content"]
+[node name="Dialogue" type="Label" parent="DialoguePanel/Margin/Content"]
 unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Dialogue"
 autowrap_mode = 2
 
-[node name="Choices" type="VBoxContainer" parent="Panel/Content"]
+[node name="Feedback" type="Label" parent="DialoguePanel/Margin/Content"]
 unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ""
+autowrap_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="DialoguePanel/Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
