@@ -1,0 +1,17 @@
+{
+  "id": "sofia",
+  "display_name": "Sofia",
+  "age": 26,
+  "bio": "A confident night owl with a guarded softer side.",
+  "expressions": [
+    "neutral",
+    "warm",
+    "happy",
+    "amused",
+    "upset"
+  ],
+  "relationship": {
+    "affection": 0,
+    "trust": 0
+  }
+}

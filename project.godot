@@ -1,0 +1,14 @@
+config_version=5
+
+[application]
+config/name="After Dusk"
+run/main_scene="res://scenes/dialogue_demo.tscn"
+
+[display]
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
